@@ -1,25 +1,14 @@
-version: "3.7"
-
 services:
-  plex:
-    image: linuxserver/plex
-    container_name: plex
-    restart: unless-stopped
+  heimdall:
+    image: linuxserver/heimdall
+    container_name: heimdall
+    volumes:
+      - /home/user/appdata/heimdall:/config
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=America/New_York 
-      - PLEX_CLAIM=claim-token # Replace with your claim 
-    volumes:
-      - /path/to/your/media:/media
-      - /path/to/plex/config:/config
+      - TZ=Europe/London
     ports:
-      - 32400:32400/tcp
-      - 3005:3005/tcp
-      - 8324:8324/tcp
-      - 32469:32469/tcp
-      - 1900:1900/udp
-      - 32410:32410/udp
-      - 32412:32412/udp
-      - 32413:32413/udp
-      - 32414:32414/udp
+      - 80:80
+      - 443:443
+    restart: unless-stopped

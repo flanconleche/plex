@@ -17,5 +17,7 @@ services:
       - /media/tv:/tv
       - /media/movies:/movies
       - /media/synology_media:/synology_media
+    devices:
+      - /dev/dri:/dev/dri
     runtime: nvidia
     restart: unless-stopped

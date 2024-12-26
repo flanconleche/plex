@@ -13,9 +13,9 @@ services:
       - NVIDIA_VISIBLE_DEVICES=all
       - NVIDIA_DRIVER_CAPABILITIES=all
     volumes:
-      - ~/plex/config:/config
-      - ~/media/tv:/tv
-      - ~/media/movies:/movies
+      - /plex/config:/config
+      - /media/tv:/tv
+      - /media/movies:/movies
       - /media/synology_media:/synology_media
     runtime: nvidia
     restart: unless-stopped

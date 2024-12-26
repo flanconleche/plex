@@ -12,7 +12,7 @@ services:
       - PLEX_CLAIM= #optional
     volumes:
       - ~/plex/config:/config
-      - /media/tv:/tv
-      - /media/movies:/movies
+      - ~/media/tv:/tv
+      - ~/media/movies:/movies
     runtime: nvidia
     restart: unless-stopped
